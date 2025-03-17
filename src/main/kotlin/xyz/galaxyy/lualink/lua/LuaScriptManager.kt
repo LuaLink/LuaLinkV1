@@ -8,7 +8,6 @@ import org.luaj.vm2.LuaError
 import org.luaj.vm2.lib.jse.JsePlatform
 import xyz.galaxyy.lualink.LuaLink
 import xyz.galaxyy.lualink.lua.misc.PrintOverride
-import xyz.galaxyy.lualink.lua.wrappers.LuaEnumWrapper
 import java.io.File
 
 class LuaScriptManager(private val plugin: LuaLink) {
@@ -27,7 +26,6 @@ class LuaScriptManager(private val plugin: LuaLink) {
         globals.set("print", PrintOverride(this.plugin))
         globals.set("utils", LuaUtils()) // Passing script to LuaUtils for state
         globals.set("scheduler", LuaScheduler(this.plugin, script)) // Passing script to LuaScheduler for state
-        globals.set("enums", LuaEnumWrapper())
         globals.set("import", LuaImport())
         globals.set("addons", LuaAddons())
         this.plugin.logger.info("Loading script ${file.name}")
