@@ -15,7 +15,7 @@ val buildNum = System.getenv("GITHUB_RUN_NUMBER") ?: "SNAPSHOT"
 
 group = "xyz.galaxyy.lualink"
 
-version = "1.20.4-$buildNum"
+version = "1.21.4-$buildNum"
 
 repositories {
     mavenCentral()
@@ -32,7 +32,7 @@ dependencies {
     testImplementation(kotlin("test"))
     library(kotlin("stdlib"))
     api(kotlin("stdlib"))
-    compileOnly("org.purpurmc.purpur:purpur-api:1.20.1-R0.1-SNAPSHOT")
+    compileOnly("org.purpurmc.purpur:purpur-api:1.21-R0.1-SNAPSHOT")
     library("com.github.only52607.luakt:luakt:$luaKTVersion")
     library("com.github.only52607.luakt:luakt-core:$luaKTVersion")
     library("com.github.only52607.luakt:luakt-extension:$luaKTVersion")
@@ -65,7 +65,7 @@ modrinth {
     versionNumber.set(version.toString())
     versionType.set("release")
     uploadFile.set(tasks.jar.get())
-    gameVersions.addAll("1.20.1", "1.20.2", "1.20.3", "1.20.4")
+    gameVersions.addAll("1.20.1", "1.20.2", "1.20.3", "1.20.4", "1.21.4")
     loaders.addAll("paper", "purpur")
     changelog.set(System.getenv("GIT_COMMIT_MESSAGE"))
 }
@@ -82,7 +82,7 @@ hangarPublish {
         platforms {
             register(Platforms.PAPER) {
                 jar.set(tasks.jar.flatMap { it.archiveFile })
-                platformVersions.set(listOf("1.20.1", "1.20.2", "1.20.3", "1.20.4"))
+                platformVersions.set(listOf("1.20.1", "1.20.2", "1.20.3", "1.20.4", "1.21.4"))
             }
         }
     }
@@ -130,13 +130,13 @@ publishing {
 tasks.test { useJUnitPlatform() }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "17"
+    kotlinOptions.jvmTarget = "21"
     kotlinOptions.javaParameters = true
 }
 
 kotlin {
     jvmToolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
+        languageVersion.set(JavaLanguageVersion.of(21))
     }
 }
 
