@@ -1,3 +1,4 @@
+# ARCHIVED! PLEASE USE [V2](https://github.com/LuaLink/LuaLinkV2)
 # LuaLink Plugin
 <a href=https://modrinth.com/plugin/lualink><img alt="modrinth" height="54" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_vector.svg"></a>
 <a href=https://hangar.papermc.io/Saturn/LuaLink><img alt="hangar" height="54" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/hangar_vector.svg"></a>
